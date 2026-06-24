@@ -553,12 +553,12 @@ html, body { background: #0B0F1A !important; color: #EDF2F7; }
     </div>
     <div class="mc">
       <div class="ml">Pillars live</div>
-      <div class="mv"><span style="color:var(--volt)">2</span> <span style="color:var(--mist-dim)">/ 6</span></div>
-      <div class="ms">2 computed in-house · 4 require external feeds</div>
+      <div class="mv"><span style="color:var(--volt)">2</span> <span style="color:var(--mist-dim)">/ 8</span></div>
+      <div class="ms">2 computed in-house · 6 require external feeds</div>
     </div>
   </div>
 
-  <div class="sl">The watchlist — main crowding signals</div>
+  <div class="sl">The watchlist — grouped by the three faces of crowding</div>
   <table class="cro-table">
     <thead><tr>
       <th style="width:20%">Signal</th>
@@ -569,6 +569,7 @@ html, body { background: #0B0F1A !important; color: #EDF2F7; }
       <th style="width:12%">Status</th>
     </tr></thead>
     <tbody>
+      <tr><td colspan="6" style="padding:6px 8px 5px;font-size:10.5px;font-weight:800;letter-spacing:1.6px;color:var(--cyan);text-transform:uppercase;border-bottom:1px solid var(--grid-line)">Comovement — how positions move together <span style="color:var(--mist-dim);font-weight:600;letter-spacing:.4px;text-transform:none">· the leading face · this study</span></td></tr>
       <tr>
         <td><div class="cro-sig">Mean pairwise DCC — CI_t</div><div class="cro-dim">Comovement · leading</div></td>
         <td class="cro-meta">Average time-varying correlation across the basket. Rising CI_t = positions converging before prices move. <b style="color:var(--ice)">Our primary signal.</b></td>
@@ -593,6 +594,7 @@ html, body { background: #0B0F1A !important; color: #EDF2F7; }
         <td class="cro-src">CBOE DSPX</td>
         <td><span class="badge b-feed">WIRE FEED</span></td>
       </tr>
+      <tr><td colspan="6" style="padding:14px 8px 5px;font-size:10.5px;font-weight:800;letter-spacing:1.6px;color:var(--amber);text-transform:uppercase;border-bottom:1px solid var(--grid-line)">Positioning — who's actually in the trade <span style="color:var(--mist-dim);font-weight:600;letter-spacing:.4px;text-transform:none">· confirming · slower, mostly external</span></td></tr>
       <tr>
         <td><div class="cro-sig">Gross / net leverage percentile</div><div class="cro-dim">Positioning · severity</div></td>
         <td class="cro-meta">Prime-broker leverage vs history. 2025 readings hit ~100th (gross) / 73rd (net) pct — the fuel for a forced unwind.</td>
@@ -616,6 +618,15 @@ html, body { background: #0B0F1A !important; color: #EDF2F7; }
         <td class="cro-meta">feed required</td>
         <td class="cro-src">GS HF VIP<br>+ 13F</td>
         <td><span class="badge b-feed">WIRE FEED</span></td>
+      </tr>
+      <tr><td colspan="6" style="padding:14px 8px 5px;font-size:10.5px;font-weight:800;letter-spacing:1.6px;color:var(--coral);text-transform:uppercase;border-bottom:1px solid var(--grid-line)">Leverage — how forced the exit will be <span style="color:var(--mist-dim);font-weight:600;letter-spacing:.4px;text-transform:none">· severity · the amplifier</span></td></tr>
+      <tr>
+        <td><div class="cro-sig">Index-futures financing spread</div><div class="cro-dim">Leverage demand · market-priced, leading</div></td>
+        <td class="cro-meta">What leveraged longs pay over cash (futures-implied rate vs SOFR). A system-wide leverage-demand gauge — richens as the crowd levers the same long. <b style="color:var(--ice)">Public &amp; daily.</b></td>
+        <td class="cro-meta">Top-decile vs 5-yr / sharp richening → leverage-demand alert</td>
+        <td class="cro-meta">~95 bps · 95-100th %ile 5y <span style="color:var(--mist-dim)">(JPM, Jun'26)</span></td>
+        <td class="cro-src">CME AIR TRF<br>+ JPM EFM</td>
+        <td><span class="badge b-elev">ELEVATED</span></td>
       </tr>
       <tr>
         <td><div class="cro-sig">Margin / collateral-call sensitivity</div><div class="cro-dim">Leverage amplification · severity</div></td>
